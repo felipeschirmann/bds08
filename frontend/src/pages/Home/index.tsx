@@ -7,7 +7,7 @@ const Home = () => {
     <div className="container">
       <h1>Desafio Github API</h1>
       <p>Bootcamp Spring React - DevSuperior</p>
-      <Link to="/before">
+      <Link to="/search">
         <Button text="Começar" />
       </Link>
     </div>

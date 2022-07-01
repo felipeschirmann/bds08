@@ -1,6 +1,5 @@
 import Home from 'pages/Home';
-import Before from 'pages/Before'
-import After from 'pages/After'
+import Search from 'pages/Search'
 import Navbar from 'components/Navbar';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -10,8 +9,7 @@ function AppRoutes() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/before" element={<Before />} />
-        <Route path="/after" element={<After />} />
+        <Route path="/search" element={<Search/>} />
       </Routes>
     </Router>
   );

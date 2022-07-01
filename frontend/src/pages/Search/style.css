@@ -25,8 +25,9 @@
   width: 100%;
 }
 
-.resul-informations input{
+.resul-informations input {
   margin-bottom: 5px;
+  font-weight:bold;
 }
 
 h2 {
@@ -34,4 +35,9 @@ h2 {
   text-align: start;
   margin-bottom: 20px;
   color: #1890ff;
+}
+
+.form-group input {
+  max-width: 200px;
+  margin-bottom: 25px;
 }
