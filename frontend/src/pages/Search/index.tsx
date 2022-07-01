@@ -9,7 +9,7 @@ type FormData = {
 };
 
 type perfilGithub = {
-  perfil: string;
+  url: string;
   avatar_url: string;
   followers: string;
   location: string;
@@ -49,7 +49,7 @@ const Search = () => {
             <input
               type="text"
               name="gitHubId"
-              defaultValue={formData.gitHubId}
+              value={formData.gitHubId}
               className="form-control"
               placeholder="Usuário Github"
               onChange={handleChange}
@@ -60,7 +60,7 @@ const Search = () => {
       </div>
       {perfilGithub && (
         <ResultCard
-          perfil={`https://api.github.com/users/${formData.gitHubId}`}
+          perfil={perfilGithub.url}
           avatar_url={perfilGithub.avatar_url}
           followers={perfilGithub.followers}
           location={perfilGithub.location}

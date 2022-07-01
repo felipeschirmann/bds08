@@ -1,18 +1,20 @@
 .content-page {
-  margin-top: 50px;
+  margin-top: 5px;
+  padding: 5px;
 }
 
 .container-result {
-  margin-top: 50px;
   background: #f5f5f5;
   border-radius: 8px;
-  display: flex;
-  align-items: center;
+  margin: 5px auto;
+  text-align: center;
+  padding: 5px;
 }
 
 .container-result img {
   height: 247px;
   width: 247px;
+  margin: 20px 0;
 }
 
 .container-result-info {
@@ -21,23 +23,47 @@
   border: 1px solid #d9d9d9;
   border-radius: 6px;
   background-color: #fff;
-  margin-left: 30px;
+  margin: 15px 0;
+  padding: 5px;
   width: 100%;
 }
-
+.resul-informations {
+  text-align: left;
+}
 .resul-informations input {
   margin-bottom: 5px;
-  font-weight:bold;
+  font-weight: bold;
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 16px;
   text-align: start;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   color: #1890ff;
 }
 
 .form-group input {
-  max-width: 200px;
   margin-bottom: 25px;
+}
+
+@media (min-width: 768px) {
+  .content-page {
+    padding: 50px 0;
+  }
+
+  .container-result {
+    margin-top: 50px;
+    display: flex;
+    padding: 15px;
+  }
+  .container-result img {
+    margin-bottom: 0px;
+  }
+  .container-result-info {
+    padding: 15px;
+    margin-left: 20px;
+  }
+  h2 {
+    font-size: 18px;
+  }
 }

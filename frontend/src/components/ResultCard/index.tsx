@@ -9,6 +9,9 @@ type Props = {
 };
 
 function ResultCard({ perfil, avatar_url, followers, location, name }: Props) {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  };
+
   return (
     <div className="base-card container container-result">
       <img src={avatar_url} alt={avatar_url} />
@@ -20,28 +23,36 @@ function ResultCard({ perfil, avatar_url, followers, location, name }: Props) {
             name="perfil"
             className="form-control"
             placeholder="perfil"
-            defaultValue={`Perfil: ${perfil}`}
+            defaultValue={""}
+            value={`Perfil: ${perfil}`}
+            onChange={handleChange}
           />
           <input
             type="text"
             name="followers"
             className="form-control"
             placeholder="followers"
-            defaultValue={`Seguidores: ${followers}`}
+            defaultValue={""}
+            value={`Seguidores: ${followers}`}
+            onChange={handleChange}
           />
           <input
             type="text"
             name="location"
             className="form-control"
             placeholder="location"
-            defaultValue={`Localização: ${location}`}
+            defaultValue={""}
+            value={`Localização: ${location}`}
+            onChange={handleChange}
           />
           <input
             type="text"
             name="name"
             className="form-control"
             placeholder="name"
-            defaultValue={`Nome: ${name}`}
+            defaultValue={""}
+            value={`Nome: ${name}`}
+            onChange={handleChange}
           />
         </div>
       </div>
