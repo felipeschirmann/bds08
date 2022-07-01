@@ -3,6 +3,7 @@ import ResultCard from "components/ResultCard";
 import Button from "components/Button";
 import axios from "axios";
 import { useState } from "react";
+import ResultCardLoader from "components/ResultCard/ResultCardLoader";
 
 type FormData = {
   gitHubId: string;
@@ -17,6 +18,8 @@ type perfilGithub = {
 };
 
 const Search = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const [perfilGithub, setPerfilGithub] = useState<perfilGithub>();
 
   const [formData, setFormData] = useState<FormData>({
@@ -32,13 +35,15 @@ const Search = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setIsLoading(true);
     axios
       .get(`https://api.github.com/users/${formData.gitHubId}`)
       .then((response) => {
         setPerfilGithub(response.data);
         console.log(response.data);
       })
-      .catch((error) => setPerfilGithub(undefined));
+      .catch((error) => setPerfilGithub(undefined))
+      .finally(() => setIsLoading(false));
   };
   return (
     <div className="content-page">
@@ -58,15 +63,20 @@ const Search = () => {
           <Button text="Encontrar" />
         </form>
       </div>
-      {perfilGithub && (
-        <ResultCard
-          perfil={perfilGithub.url}
-          avatar_url={perfilGithub.avatar_url}
-          followers={perfilGithub.followers}
-          location={perfilGithub.location}
-          name={perfilGithub.name}
-        />
-      )}
+      {perfilGithub &&
+        (isLoading ? (
+          <>
+            <ResultCardLoader />
+          </>
+        ) : (
+          <ResultCard
+            perfil={perfilGithub.url}
+            avatar_url={perfilGithub.avatar_url}
+            followers={perfilGithub.followers}
+            location={perfilGithub.location}
+            name={perfilGithub.name}
+          />
+        ))}
     </div>
   );
 };
