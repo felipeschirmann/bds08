@@ -1,25 +1,4 @@
-.container {
-  padding: 30px;
-}
-
-h1 {
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #262626;
-}
-
-p {
-  margin-bottom: 30px;
-}
-input {
-  display: flex;
-  align-items: center;
-  background: #ffffff;
-  border: 1px solid #d9d9d9;
-  border-radius: 4px;
-  width: 298px;
-  height: 40px;
-  color: #bfbfbf;
-  padding-left: 17px;
-  margin-bottom: 25px;
+.content-page {
+  margin-top: 50px;
+  padding-bottom: 50px;
 }

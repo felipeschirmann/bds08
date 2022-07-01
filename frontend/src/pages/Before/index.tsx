@@ -1,17 +1,10 @@
 import "./style.css";
-import { Link } from "react-router-dom";
-import Button from "components/Button";
+import CardSearch from "components/CardSearch";
 
 const Home = () => {
   return (
-    <div className="container">
-      <div className="base-card">
-        <h1>Encontre um perfil Github</h1>
-        <input type="text" placeholder="Usuário Github" />
-        <Link to="/after">
-          <Button text="Encontrar" />
-        </Link>
-      </div>
+    <div className="content-page">
+      <CardSearch />
     </div>
   );
 };
